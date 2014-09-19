@@ -89,5 +89,84 @@
             return this.Ok(model);
         }
 
+        public IHttpActionResult Update(int id, AppointmentModel appointment)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingAppointment = this.data.Appointments.All().FirstOrDefault(a => a.Id == id);
+            if (existingAppointment == null)
+            {
+                return BadRequest("Such appointment does not exist!");
+            }
+
+            var city = data.Cities.All().FirstOrDefault(c => c.Name == appointment.City);
+            if (city == null)
+            {
+                return BadRequest("Such city does not exist!");
+            }
+
+            var student = data.Users.All().FirstOrDefault(c => c.UserName == appointment.Student);
+            if (student == null)
+            {
+                return BadRequest("Such student does not exist!");
+            }
+
+            var instructor = data.Users.All().FirstOrDefault(u => u.UserName == appointment.Instructor);
+            if (instructor == null)
+            {
+                return BadRequest("Such instructor does not exist!");
+            }
+
+
+            existingAppointment.City = city;
+            existingAppointment.Date = appointment.Date;
+            existingAppointment.Status = appointment.Status;
+            existingAppointment.Student = student;
+            existingAppointment.Instructor = instructor;
+            this.data.SaveChanges();
+
+            appointment.Id = id;
+            return Ok(appointment);
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            var existingAppointment = this.data.Appointments.All().FirstOrDefault(a => a.Id == id);
+            if (existingAppointment == null)
+            {
+                return BadRequest("Such appointment does not exist!");
+            }
+
+            this.data.Appointments.Delete(existingAppointment);
+            this.data.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public IHttpActionResult AddStudent(int appointmentId, string username)
+        {
+            var appointment = this.data.Appointments.All().FirstOrDefault(a => a.Id == appointmentId);
+            if (appointment == null)
+            {
+                return BadRequest("Such appointment does not exist - invalid id!");
+            }
+
+            var student = this.data.Users.All().FirstOrDefault(b => b.UserName == username);
+            if (student == null)
+            {
+                return BadRequest("Such student does not exist - invalid id!");
+            }
+
+            appointment.Student = student;
+            this.data.SaveChanges();
+
+            return Ok();
+        }
+
     }
 }
