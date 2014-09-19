@@ -15,7 +15,6 @@ using System.Web.Http.Cors;
 
 namespace SlowAndDangerous.WebAPI.Providers
 {
-    [EnableCors("*", "*", "*", SupportsCredentials=true)]
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;

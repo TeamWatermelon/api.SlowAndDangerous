@@ -29,7 +29,8 @@
         {
             var cities = this.data
                 .Cities
-                .All();
+                .All()
+                .Select(CityModel.FromCity);
 
             return Ok(cities);
         }

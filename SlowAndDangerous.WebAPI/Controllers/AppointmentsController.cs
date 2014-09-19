@@ -9,7 +9,6 @@
     using SlowAndDangerous.Models;
 
     [Authorize]
-    [EnableCors("*", "*", "*")]
     public class AppointmentsController : ApiController
     {
         private ISlowAndDangerousData data;
@@ -27,7 +26,7 @@
         [HttpGet]
         public IHttpActionResult All()
         {
-            return Ok(this.data.Appointments.All());
+            return Ok(this.data.Appointments.All().Select(AppointmentModel.FromAppointment));
         }
 
         [HttpGet]
@@ -39,7 +38,7 @@
                 return this.BadRequest("There is no such appointment.");
             }
 
-            return this.Ok(result);
+            return this.Ok(result.Instructor.UserName);
         }
 
         [HttpPost]
