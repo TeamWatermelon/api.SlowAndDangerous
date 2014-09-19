@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlowAndDangerous.Models", "SlowAndDangerous.Models\SlowAndDangerous.Models.csproj", "{D492D6E0-5C4B-4AA2-B784-BFE229F165AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{10F3E3E1-4CE5-4573-BF26-56E2D8BEE0F9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlowAndDangerous.Data", "SlowAndDangerous.Data\SlowAndDangerous.Data.csproj", "{F1FD1189-E9DF-4703-AFE8-EE4CF2F01E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlowAndDangerous.WebAPI", "SlowAndDangerous.WebAPI\SlowAndDangerous.WebAPI.csproj", "{89596E72-0A86-42BE-8B0B-36649B5914A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D492D6E0-5C4B-4AA2-B784-BFE229F165AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D492D6E0-5C4B-4AA2-B784-BFE229F165AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D492D6E0-5C4B-4AA2-B784-BFE229F165AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D492D6E0-5C4B-4AA2-B784-BFE229F165AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FD1189-E9DF-4703-AFE8-EE4CF2F01E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FD1189-E9DF-4703-AFE8-EE4CF2F01E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FD1189-E9DF-4703-AFE8-EE4CF2F01E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FD1189-E9DF-4703-AFE8-EE4CF2F01E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89596E72-0A86-42BE-8B0B-36649B5914A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89596E72-0A86-42BE-8B0B-36649B5914A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89596E72-0A86-42BE-8B0B-36649B5914A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89596E72-0A86-42BE-8B0B-36649B5914A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
