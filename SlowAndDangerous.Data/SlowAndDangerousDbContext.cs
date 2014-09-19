@@ -9,7 +9,7 @@
     public class SlowAndDangerousDbContext : IdentityDbContext<User>, ISlowAndDangerousDbContext
     {
         public SlowAndDangerousDbContext()
-            : base("SlowAndDangerousConnectionSQL", throwIfV1Schema: false)
+            : base("SlowAndDangerousConnection", throwIfV1Schema: false)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SlowAndDangerousDbContext, Configuration>());
         }
